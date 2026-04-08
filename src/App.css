@@ -1,0 +1,42 @@
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Sidebar Scroll Tracker */
+.scroll-tracker-wrapper {
+  position: fixed;
+  top: 50%;
+  right: 2.5rem;
+  transform: translateY(-50%);
+  height: 200px;
+  width: 4px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-tracker-track {
+  width: 100%;
+  height: 100%;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scroll-tracker-fill {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-blue);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .scroll-tracker-wrapper {
+    right: 1rem;
+    height: 150px;
+    width: 3px;
+  }
+}

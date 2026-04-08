@@ -1,0 +1,97 @@
+.modules-section {
+  padding: 10rem 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+.modules-header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.modules-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.modules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.module-card {
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  gap: 8rem;
+}
+
+.flex-row-regular {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.module-text-content {
+  flex: 1;
+}
+
+.module-title {
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.module-desc {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.module-btn {
+  font-size: 0.9rem;
+  padding: 12px 28px;
+}
+
+.module-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.module-placeholder-wrapper {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  position: relative;
+}
+
+.module-image-asset {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+}
+
+@media (max-width: 1024px) {
+  .module-card {
+    flex-direction: column-reverse;
+    padding: 2.5rem;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .flex-row-reverse {
+    flex-direction: column-reverse;
+  }
+}

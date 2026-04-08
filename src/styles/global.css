@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-light: #f2f4f8;
+  --bg-white: #ffffff;
+  --accent-blue: #3b4cfc; /* Deep saturated lusion blue */
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b7280;
+  --border-color: rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Lusion Style Pills & Panels */
+.pill-btn {
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pill-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-white);
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.pill-btn.dark {
+  background: var(--text-primary);
+  color: var(--bg-white);
+  border-color: var(--text-primary);
+}
+
+.pill-btn.dark:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.dot-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.pill-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
+
+/* Override old text-gradients to solid black for minimalism */
+.text-gradient {
+  color: var(--text-primary);
+}
+.text-gradient-green {
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
