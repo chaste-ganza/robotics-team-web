@@ -13,6 +13,7 @@ import Features from './sections/Features'
 import Team from './sections/Team'
 import Footer from './sections/Footer'
 import ExperienceRating from './components/ExperienceRating'
+import Navbar from './components/Navbar'
 
 // Critical heavy assets that must be preloaded before showing the site
 import farmoRoverImg from './assets/images/farmo_rover.png'
@@ -59,6 +60,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
+          <Navbar />
           {/* Peripheral Right-Aligned Scroll Tracker */}
           <div className="scroll-tracker-wrapper">
             <div className="scroll-tracker-track">

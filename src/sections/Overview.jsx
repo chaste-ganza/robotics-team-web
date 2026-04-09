@@ -1,36 +1,54 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import farmoRoverImg from '../assets/images/farmo_rover.png'
 import './Overview.css'
 
 const Overview = () => {
   const ref = useRef(null)
   
-  // Track scroll specifically over this component's bounding box
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   })
 
   // Slow down the Y movement of the text block to create physical depth
-  const yOffset = useTransform(scrollYProgress, [0, 1], [40, -40])
+  const textOffset = useTransform(scrollYProgress, [0, 1], [30, -30])
+  const imageOffset = useTransform(scrollYProgress, [0, 1], [-20, 20])
 
   return (
-    <section ref={ref} className="overview-section">
-      <div className="overview-content">
-        <motion.div 
+    <section ref={ref} className="panoramic-overview-section">
+      <div className="pan-header-container">
+        <motion.h2 
+          className="pan-title"
+          style={{ y: textOffset }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="overview-text-container"
-          style={{ y: yOffset }} /* Applying true scrolling parallax */
         >
-          <h2 className="section-title">The Future of Agriculture</h2>
-          <p className="overview-description">
-            Farmo is not just a tractor. It is a highly intelligent, <strong>modular platform</strong> designed to traverse rugged terrains while delicately performing complex agricultural tasks. <br/><br/>
-            Whether it's precision watering, high-density seed planting, or heavy load carrying, Farmo adapts to the mission.
-          </p>
+          We create 3D visual storytelling and interactive web experiences that help brands stand out
+        </motion.h2>
+      </div>
+
+      <div className="pan-image-container">
+        <motion.div 
+          className="pan-image-wrapper"
+          style={{ y: imageOffset }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img src={farmoRoverImg} alt="Panoramic Showcase" className="pan-image" />
         </motion.div>
+      </div>
+
+      <div className="pan-footer">
+        <span className="pan-plus">+</span>
+        <span className="pan-plus">+</span>
+        <span className="pan-scroll-txt">SCROLL TO EXPLORE</span>
+        <span className="pan-plus">+</span>
+        <span className="pan-plus">+</span>
       </div>
     </section>
   )
